@@ -1,8 +1,8 @@
 Tên nhóm: [Tự điền]
 
-Họ và tên: [Tự điền]
+Họ và tên: Nguyễn Văn Huy
 
-Email đăng ký: [Tự điền]
+Email đăng ký: huyhaithanh51@gmail.com
 
 Command: python autograder/autograder.py
 Exit code: 1

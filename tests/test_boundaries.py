@@ -1,6 +1,6 @@
 # Tên nhóm: [Tự điền]
-# Họ và tên: [Tự điền]
-# Email đăng ký: [Tự điền]
+# Họ và tên: Nguyễn Văn Huy
+# Email đăng ký: huyhaithanh51@gmail.com
 """Offline validator/rule tests, not evidence of live model compliance."""
 import importlib.util
 import json

@@ -2,7 +2,7 @@
 
 ## Bài làm cá nhân hiện tại — Chatbot tìm chỗ ở tại Vinhomes
 
-Bài trên nhánh `huyht` gồm 4 file nộp ở thư mục gốc, bài Python Xanh SM bắt buộc theo slide và prototype tìm thuê căn hộ Vinhomes bổ sung. Thông tin tên nhóm, họ tên, email để người nộp tự điền. Trong `04-workflow-diagram.png`, cập nhật thông tin bằng cách sửa phần header trong `tools/build_lab_assets.py` rồi chạy lại script.
+Bài trên nhánh `huyht` gồm 4 file nộp ở thư mục gốc, bài Python Xanh SM bắt buộc theo slide và prototype tìm thuê căn hộ Vinhomes bổ sung. Người thực hiện: **Nguyễn Văn Huy** — **huyhaithanh51@gmail.com**. Tên nhóm để người nộp tự điền. Trong `04-workflow-diagram.png`, cập nhật thông tin bằng cách sửa phần header trong `tools/build_lab_assets.py` rồi chạy lại script.
 
 **Môi trường đã chuẩn bị:** `.venv-lab`, Python 3.13.13, phù hợp yêu cầu slide (>3.11, <3.14). Dùng lệnh dưới đây từ thư mục dự án; không cần kích hoạt venv:
 

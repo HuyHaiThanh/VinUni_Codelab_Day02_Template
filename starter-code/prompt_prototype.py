@@ -1,6 +1,6 @@
 # Tên nhóm: [Tự điền]
-# Họ và tên: [Tự điền]
-# Email đăng ký: [Tự điền]
+# Họ và tên: Nguyễn Văn Huy
+# Email đăng ký: huyhaithanh51@gmail.com
 """Required slide exercise: live Gemini boundary tests; no mock success."""
 import json
 import os

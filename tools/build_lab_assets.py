@@ -1,6 +1,6 @@
 # Tên nhóm: [Tự điền]
-# Họ và tên: [Tự điền]
-# Email đăng ký: [Tự điền]
+# Họ và tên: Nguyễn Văn Huy
+# Email đăng ký: huyhaithanh51@gmail.com
 """Rebuild synthetic demo data and the current-state engineering diagram."""
 import json
 from pathlib import Path
@@ -19,7 +19,7 @@ for i in range(1, 31):
         amenities=['window', 'private_bathroom'] if i % 2 else ['parking'],
         availability='unknown' if i % 11 == 0 else 'listed_available',
         usage_fees_note='Điện/nước theo sử dụng chưa được tính vào tổng cố định.'))
-data = {'team': '[Tự điền]', 'name': '[Tự điền]', 'email': '[Tự điền]',
+data = {'team': '[Tự điền]', 'name': 'Nguyễn Văn Huy', 'email': 'huyhaithanh51@gmail.com',
         'synthetic': True, 'as_of': '2026-09-11',
         'notice': 'Không phải tin cho thuê thật; khoảng cách và giá hoàn toàn giả lập.', 'rooms': rooms}
 (ROOT / 'data/rooms.json').write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
@@ -31,8 +31,8 @@ regular = 'C:/Windows/Fonts/arial.ttf'
 bold = 'C:/Windows/Fonts/arialbd.ttf'
 def font(n, b=False): return ImageFont.truetype(bold if b else regular, n)
 def text(x,y,t,n=27,color='#223047',b=False): d.text((x,y),t,font=font(n,b),fill=color)
-text(80,40,'Tên nhóm: [Tự điền]  |  Họ và tên: [Tự điền]',25)
-text(80,78,'Email đăng ký: [Tự điền]',25)
+text(80,40,'Tên nhóm: [Tự điền]  |  Họ và tên: Nguyễn Văn Huy',25)
+text(80,78,'Email đăng ký: huyhaithanh51@gmail.com',25)
 text(80,145,'QUY TRÌNH TÌM CHỖ Ở VINHOMES',46,b=True)
 text(80,212,'Bối cảnh: cá nhân, cặp đôi và gia đình tìm thuê căn hộ Vinhomes',28)
 text(80,260,'55 phút thao tác/phiên — số liệu giả định, chưa khảo sát',30,'#b45309',True)
