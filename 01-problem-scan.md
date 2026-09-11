@@ -1,4 +1,12 @@
 # Problem Scan — Vin Smart Future
+**Tên nhóm:** [Tự điền]
+
+**Họ và tên:** Nguyễn Đỗ Chiến Thắng
+
+**Mã HV:** 2A202602442
+
+**Email đăng ký:** nguyendochienthang711@gmail.com
+
 
 > **Lựa chọn của nhóm cho các phase tiếp theo:** Vinhomes — hỗ trợ người tìm thuê chỗ ở so sánh các căn đáp ứng ngân sách, nhu cầu và ngày chuyển vào. Đề tài này thay thế các phương án ưu tiên thử nghiệm ban đầu bên dưới khi thực hiện Deep-Dive, Prototype và Evaluate.
 
