@@ -1,6 +1,7 @@
 # 03 — AI Log & Reflection
 
 > **Học viên:** Nguyễn Hải Hiếu
+> **Mã học viên** 2A202602681
 > **Branch:** `nguyenhaihieu`
 > **Công cụ AI đã dùng:** Claude (Claude Code trong terminal) làm trợ lý chính, Gemini 2.5 Flash làm mô hình bị kiểm thử trong phần prototype.
 
