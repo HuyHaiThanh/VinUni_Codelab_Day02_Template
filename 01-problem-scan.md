@@ -13,7 +13,7 @@ Danh sách ưu tiên các pain point người dùng có thể gặp trực tiế
 | # | Subsidiary | Lens | Mô tả ngắn bài toán |
 |---|---|---|---|
 | 1 | **Xanh SM** | Pain từ người khác | Khách và tài xế không tìm thấy nhau tại bệnh viện, chung cư, sân bay có nhiều cổng; phải gọi qua lại và dễ hủy chuyến. |
-| 2 | **VinFast** | Pain từ người khác | Chủ xe đến trạm sạc nhưng phải xếp hàng, trụ không dùng được, hoặc tình trạng trên app không khớp thực tế. |
+| 2 | **Xanh SM** | Pain từ người khác | Khách lo ngại một số tài xế chạy quá tốc độ, phanh gấp hoặc ôm cua gấp; hệ thống hiện chưa phát hiện và can thiệp nhất quán các chuyến có rủi ro. |
 | 3 | **Vinhomes** | AI-upgrade | Cư dân báo rò nước, hỏng đèn, thang máy lỗi hoặc tiếng ồn nhưng không biết yêu cầu đã được chuyển cho ai và khi nào được xử lý. |
 | 4 | **Vinpearl / VinWonders** | Time-consuming | Kế hoạch vui chơi của gia đình bị đảo lộn khi mưa, khu vui chơi đóng, hoặc sự kiện thay đổi; khách mất thời gian tìm phương án thay thế. |
 | 5 | **Vinmec** | AI-upgrade | Bệnh nhân sau xuất viện khó hiểu hướng dẫn, dễ quên lịch tái khám hoặc hiểu sai cách dùng thuốc. |
@@ -47,29 +47,29 @@ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent
 Boundary: AI chỉ tạo bản nháp gợi ý; không tự đổi điểm đón, không tự gửi tin nhắn khi chưa có phê duyệt của tài xế/khách.
 ```
 
-### Card #2: VinFast - Gợi ý trạm sạc minh bạch
+### Card #2: Xanh SM - Phát hiện hành vi lái xe rủi ro
 
 ```text
 QUICK PROBLEM CARD #2
 
-Bài toán: Chủ xe đến trạm sạc theo gợi ý trên app nhưng gặp hàng đợi, trụ lỗi, hoặc tình trạng sạc không khớp thực tế.
-Công ty thành viên: [x] VinFast
+Bài toán: Phát hiện sớm chuyến xe có hành vi lái xe rủi ro để bảo vệ an toàn khách hàng và hỗ trợ tài xế cải thiện.
+Công ty thành viên: [x] Xanh SM
 
-Ai đang đau? Chủ xe EV (lo hết pin, tốn thời gian), nhân viên hỗ trợ (nhận khiếu nại), vận hành trạm sạc (xử lý báo lỗi).
+Ai đang đau? Khách hàng (lo lắng, trải nghiệm không an toàn), tài xế (cần phản hồi công bằng để cải thiện), đội an toàn vận hành (khó rà soát toàn bộ chuyến xe).
 
-Workflow thủ công hiện tại:
-1. Chủ xe xem trạm sạc trên app và tự đi đến
-2. Đến nơi mới phát hiện trụ đang bận, đang lỗi, hoặc không tương thích
-3. Chủ xe tìm trạm khác hoặc gọi tổng đài
-4. Nhân viên tra cứu tình trạng và hướng dẫn thủ công
+Workflow hiện tại:
+1. Hệ thống lưu dữ liệu GPS/telemetry cơ bản trong quá trình chạy xe
+2. Khách chỉ có thể báo cáo khi cảm thấy tài xế lái ẩu hoặc xảy ra sự cố
+3. Nhân viên an toàn kiểm tra thủ công từng khiếu nại và dữ liệu liên quan
+4. Quản lý liên hệ, nhắc nhở hoặc đào tạo lại tài xế nếu cần
 
-Bước tốn thời gian/lỗi nhất: Bước 2-4 (10-20 phút, có nguy cơ xe cạn pin).
-AI hỗ trợ: Tổng hợp dữ liệu trạng thái trạm đã xác thực, hàng đợi, báo lỗi và loại xe để giải thích phương án sạc phù hợp.
+Bước tốn thời gian/lỗi nhất: Bước 3 (khó rà soát dữ liệu của nhiều chuyến xe, dễ bỏ sót pattern rủi ro).
+AI hỗ trợ: Phân tích dữ liệu được phép sử dụng như tốc độ, tăng/giảm tốc, phanh gấp, cua gấp và bối cảnh tuyến đường để gắn cờ chuyến có rủi ro; LLM tạo bản tóm tắt dễ đọc cho quản lý.
 
-Metric: Giảm 15% lượt đến trạm không sạc được; giảm thời gian tìm phương án thay thế từ 15 phút xuống dưới 5 phút.
+Metric: Giảm 15% số sự kiện phanh gấp/tăng tốc gấp trên mỗi 100 km trong 3 tháng; 100% cảnh báo rủi ro cao được quản lý xem xét trong 24 giờ.
 
 Quick Architecture: [ ] No AI  [x] Rule  [x] LLM  [ ] Agent
-Boundary: AI chỉ gợi ý và nêu mức độ tin cậy; không cam kết trụ chắc chắn trống, không đưa hướng dẫn liên quan đến an toàn xe.
+Boundary: Điểm rủi ro là tín hiệu hỗ trợ, không phải kết luận vi phạm. AI không tự phạt, khóa tài khoản hoặc giảm thu nhập tài xế; quản lý phải xem dữ liệu gốc, xem xét bối cảnh và cho tài xế cơ chế giải trình trước mọi quyết định.
 ```
 
 ### Card #3: Vinhomes - Cập nhật tình trạng phản ánh cư dân
