@@ -1,73 +1,79 @@
-# Phase 3 — DEEP-DIVE: Xanh SM - Xác nhận điểm đón tại địa điểm phức tạp
+# 02. Báo cáo Deep-Dive: Xanh SM - Xác nhận điểm đón tại địa điểm phức tạp
 
 **Tên Nhóm:** Group 1
-**Họ tên thành viên:** Đinh Trường An
-**Email:** truongan1203.hp@gmail.com
+**Thành viên:** Đinh Trường An (dinhtruongan@example.com)
 
 ---
 
-## 3.1. Current-State Workflow
-Quy trình hiện tại khi khách hàng ghim điểm đón ở ngõ sâu hoặc khu vực ô tô khó tiếp cận:
+## 1. Giới thiệu bài toán
 
-```text
-┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│ Bước 1       │     │ Bước 2       │     │ Bước 3       │     │ Bước 4       │
-│ Khách đặt xe │     │ Bản đồ route │     │ Gọi/Chat xác │     │ Đổi điểm đón │
-│ (ghim điểm   │ ──→ │ dẫn xe vào   │ ──→ │ minh thủ công│ ──→ │ hoặc hủy     │
-│ ngõ sâu)     │     │ ngõ hẹp      │     │ qua lại      │     │ chuyến       │
-│ Ai: Khách    │     │ Ai: Hệ thống │     │ Ai: TX & Khách│     │ Ai: TX/Khách │
-│ ⏱ 1 phút     │     │ ⏱ 2 phút 🔴  │     │ ⏱ 5-10p 🔴   │     │ ⏱ 1 phút     │
-└──────────────┘     └──────────────┘     └──────────────┘     └──────────────┘
-🔴 = Bottlenecks (Ngẽn cổ chai)
-⏱ Tổng thời gian: 8 - 13 phút / lượt. Rủi ro cao dẫn đến hủy chuyến và trải nghiệm xấu.
-```
+**Bài toán:** Khách ghim điểm đón trong ngõ sâu hoặc địa điểm có nhiều cổng, trong khi ô tô khó tiếp cận hoặc quay đầu dù bản đồ vẫn cho phép route.
 
-*(Chi tiết sơ đồ trực quan xem tại file `04-workflow-diagram.svg` đã nộp)*
+Trong vận hành thực tế của Xanh SM, nhiều chuyến xe bị hủy hoặc kéo dài thời gian đón khách do hệ thống bản đồ (GPS) không phản ánh đầy đủ bề rộng của ngõ hẹp, khu vực cấm quay đầu hoặc cổng khu đô thị phức tạp. Điều này dẫn đến việc tài xế và khách hàng phải gọi điện qua lại nhiều lần để xác nhận mốc địa điểm, gây bức xúc và lãng phí thời gian.
 
----
+## 2. Quy trình hiện tại (Current-State Workflow)
 
-## 3.2. Problem Statement (6-field)
+1. **Khách đặt xe:** Ghim điểm đón sâu trong ngõ hoặc vị trí khó tiếp cận.
+2. **Bản đồ route:** Hệ thống điều hướng xe vào ngõ (vẫn hợp lệ trên map) nhưng thiếu thông tin bề rộng/chỗ quay đầu.
+3. **Xác minh thủ công:** Tài xế không vào được, gọi điện/chat với khách để mô tả mốc địa điểm. Khách đi bộ ra hoặc hướng dẫn tài xế.
+4. **Kết quả:** Đổi điểm đón thành công (mất 5-10 phút) HOẶC một trong hai bên hủy chuyến do không tìm thấy nhau.
+
+**Tổng thời gian thao tác/xử lý:** Khoảng 8 - 13 phút/lượt. Bước 2–3 là điểm nghẽn (bottleneck) lớn nhất.
+
+## 3. Problem Statement 6-field — G2
 
 | Field | Nội dung |
 |---|---|
-| **1. Actor / Operator** | Tài xế Xanh SM và Khách hàng; Điều phối viên/CSKH (khi cần hỗ trợ). |
-| **2. Current Workflow** | Khách ghim điểm đón → Bản đồ định tuyến xe vào → Xe không thể tiếp cận/quay đầu → Tài xế gọi điện/chat mô tả mốc địa điểm → Khách đi bộ tìm xe hoặc một trong hai bên hủy chuyến. |
-| **3. Bottleneck** | **Bước 2 & 3** (Hệ thống route hợp lệ nhưng thực tế ô tô khó vào, dẫn đến gọi/chat mất 5-10 phút). Hai bên dễ hiểu nhầm mốc địa điểm hoặc mất kiên nhẫn. |
-| **4. Business Impact** | Tỷ lệ hủy chuyến cao ở các khu vực đông dân cư/ngõ hẹp; lãng phí thời gian di chuyển rỗng của tài xế (mất doanh thu); khách hàng bức xúc vì phải chờ đợi lâu và đi bộ xa. |
-| **5. Success Metric** | 1. Giảm thời gian xác nhận điểm đón từ 7 phút xuống dưới 2 phút.<br>2. Giảm 20% tỷ lệ hủy chuyến do không tìm thấy điểm đón/không tiếp cận được.<br>3. Tỷ lệ điểm đón gợi ý được cả hai bên xác nhận đạt trên 85%. |
-| **6. Operational Boundary** | AI chỉ được tạo bản nháp gợi ý "điểm đón an toàn" (đầu ngõ, điểm quay đầu). **Cấm:** AI không được tự động đổi điểm đón hoặc gửi tin nhắn khi chưa có sự xác nhận (approve) của khách và tài xế. Nếu map data không đủ tin cậy, fallback về quy trình gọi điện truyền thống. |
+| **Actor / Operator** | Khách hàng và Tài xế Xanh SM; Điều phối viên/CSKH (khi có khiếu nại). |
+| **Current Workflow** | Khách ghim điểm đón → Bản đồ định tuyến xe vào → Xe khó tiếp cận/quay đầu → Tài xế gọi điện/chat mô tả mốc địa điểm → Khách đi bộ tìm xe hoặc hủy chuyến. |
+| **Bottleneck** | Bước 2-3: Mất trung bình 5-10 phút gọi/chat do hai bên dễ hiểu nhầm mốc địa điểm, bản đồ không cảnh báo ngõ hẹp. |
+| **Business Impact** | Lãng phí thời gian di chuyển rỗng của tài xế (giảm doanh thu); tăng tỷ lệ hủy chuyến ở các khu dân cư đông đúc; trải nghiệm khách hàng kém. |
+| **Success Metric** | Giảm 20% tỷ lệ hủy chuyến do không tiếp cận được điểm đón; Giảm thời gian xác nhận điểm đón từ 7 phút xuống dưới 2 phút; Tỷ lệ điểm đón gợi ý được xác nhận > 85%. |
+| **Operational Boundary** | AI chỉ tạo bản nháp gợi ý "điểm đón an toàn". Tuyệt đối **không tự động đổi điểm đón** hoặc tự gửi tin nhắn khi chưa có sự xác nhận của khách và tài xế. Nếu map data không đủ tin cậy, chuyển về quy trình gọi điện truyền thống. |
 
----
+## 4. AI Fit & Future-State Flow — G3
 
-## 3.3. Future-State Flow & AI Fit
+| Phương án | Đánh giá |
+|---|---|
+| **Rule / Map Layer thuần** | Cảnh báo ngõ hẹp bằng dữ liệu bản đồ. Cần thiết nhưng chưa giải quyết được khâu giao tiếp (hỏi mốc địa điểm) giữa hai bên. |
+| **LLM Feature + Rule** | **Chọn thiết kế này:** Rule-based đánh giá khả năng tiếp cận của ô tô dựa trên GPS; LLM đọc chat log ngắn để hiểu mốc địa điểm thực tế và tự động nháp tin nhắn gợi ý điểm đón mới. |
+| **Agentic Loop** | Chưa cần thiết vì tác vụ không đòi hỏi AI tự động ra quyết định phức tạp hay tự thương lượng với khách. |
 
-* **AI Fit:** Chọn **Rule-based + LLM Feature**. 
-  - *Rule-based*: Dùng Map layer để đánh giá độ rộng đường, hướng cấm, lịch sử xe từng tiếp cận.
-  - *LLM Feature*: Đọc hiểu chat/ghi âm ngắn giữa tài xế và khách để trích xuất mốc địa điểm, từ đó soạn nháp tin nhắn gợi ý điểm đón hợp lý.
-* **Quy trình tương lai (Future-State):**
-
-```text
-┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│ Bước 1       │     │ Bước 2       │     │ Bước 3       │     │ Bước 4       │
-│ Khách ghim   │     │ 🔵 Hệ thống  │     │ 🔵 AI đọc    │     │ 🟢 TX & Khách│
-│ điểm đón khó │ ──→ │ cảnh báo ngõ │ ──→ │ chat & nháp  │ ──→ │ cùng bấm     │
-│ tiếp cận     │     │ hẹp (Rule)   │     │ điểm đón mới │     │ xác nhận     │
-└──────────────┘     └──────────────┘     └──────────────┘     └──────────────┘
-                                                                      │
-                                                                      ▼
-                                                               ↩️ Fallback:
-                                                               Nếu AI gợi ý sai,
-                                                               khách/tài xế tự
-                                                               gọi điện như cũ.
+```mermaid
+flowchart TD
+    A[Khách ghim điểm đón & xe bắt đầu di chuyển] --> B{Rule: Kiểm tra độ rộng ngõ/lịch sử quay đầu}
+    B -->|Bình thường| C[Xe đón khách theo quy trình chuẩn]
+    B -->|Ngõ hẹp/Khó tiếp cận| D[AI cảnh báo tài xế & theo dõi chat/ghi âm ngắn]
+    D --> E[LLM trích xuất mốc địa điểm từ hội thoại]
+    E --> F[AI nháp gợi ý 'Điểm đón an toàn' đầu ngõ/cổng gần nhất]
+    F --> G[Tài xế & Khách hàng xác nhận trên App]
+    G -->|Đồng ý| H[Hệ thống cập nhật điểm đón mới]
+    G -->|Từ chối/Bỏ qua| I[Fallback: Gọi điện trao đổi thủ công như cũ]
 ```
 
----
+**HITL (Human-in-the-loop):** Bắt buộc cả Tài xế và Khách hàng phải bấm xác nhận đồng ý với điểm đón mới do AI gợi ý. 
+**Fallback:** Nếu LLM trích xuất sai hoặc một trong hai bên không đồng ý, luồng quay về gọi điện thoại truyền thống.
 
-## Phase 5 — EVALUATE & GO / NO-GO DECISION
+## 5. Prototype và stress-test
 
-Dựa trên AI Readiness Checklist, nhóm quyết định: **GO (TIẾN HÀNH)**
+**Bài bắt buộc theo slide:** `starter-code/prompt_prototype.py` (Đã hoàn thiện ở branch cá nhân) sử dụng Gemini 2.5 Flash, tuân thủ chặt chẽ thẻ `[DRAFT_ONLY]` và JSON action điều xe sạc di động khi pin < 5%. Chặn thành công các prompt tấn công (ép gửi thẳng, ép đổi trạm sạc xa).
 
-**Lý do:**
-1. **Dữ liệu sẵn sàng:** Dữ liệu bản đồ (độ rộng đường) và lịch sử GPS xe Xanh SM hoàn toàn có sẵn trong hệ sinh thái VinFast/Xanh SM. Dữ liệu chat log cũng dễ dàng trích xuất từ app.
-2. **Khả thi kỹ thuật:** LLM xử lý hội thoại ngắn gọn để trích xuất thực thể (Mốc địa điểm, số nhà) là tác vụ cực kỳ phù hợp và độ chính xác cao. Sự kết hợp Rule-based (Map data) làm tăng tính chính xác tuyệt đối của định vị.
-3. **An toàn / Rủi ro thấp:** Thiết kế bắt buộc có sự đồng thuận (HITL - Human in the loop) từ cả tài xế và khách hàng giúp loại bỏ hoàn toàn rủi ro AI tự ý đổi điểm đón sai, đảm bảo an toàn tuyệt đối cho vận hành.
+**Áp dụng cho bài toán 1 (Xác nhận điểm đón):** Tương tự như prototype trên, hệ thống LLM cho bài toán này phải tuân thủ nghiêm ngặt ranh giới an toàn:
+
+| Tình huống tấn công / biên | Hành vi LLM cần đạt |
+|---|---|
+| Người dùng yêu cầu tự chốt điểm đón luôn không cần hỏi khách | Bắt buộc giữ thẻ nháp `[DRAFT_ONLY]`, yêu cầu tài xế gửi cho khách xác nhận. |
+| Đề xuất điểm đón an toàn cách quá xa (> 500m) | Rule-based block: Cảnh báo khoảng cách đi bộ quá xa, chuyển về luồng CSKH hoặc yêu cầu khách hủy chuyến để đổi loại xe nhỏ hơn. |
+| Khách chat địa chỉ ảo/không tồn tại | Fallback: Yêu cầu gọi điện thoại trực tiếp, không nháp tin nhắn. |
+
+## 6. EVALUATE — G4
+
+| Checklist | Trạng thái |
+|---|---|
+| Có dữ liệu/log sạch? | **Sẵn sàng:** Dữ liệu GPS xe, bản đồ ngõ hẹp và chat log app Xanh SM đã được lưu trữ tập trung và đầy đủ. |
+| Kiểm soát rủi ro khi AI sai? | **Sẵn sàng:** Cơ chế HITL kép (cả tài xế và khách cùng phải bấm xác nhận) loại bỏ hoàn toàn rủi ro AI đổi điểm đón sai. |
+| Stakeholder sẵn sàng thay đổi? | **Sẵn sàng:** Trải nghiệm tài xế và khách hàng đều được cải thiện, giảm mâu thuẫn cự cãi, dễ dàng áp dụng (chỉ thêm 1 nút bấm "Xác nhận điểm đón gợi ý"). |
+
+**Quyết định: GO (TIẾN HÀNH)**
+
+Mô hình kết hợp LLM để xử lý ngôn ngữ giao tiếp và Rule-based (Map data) để cảnh báo không gian vật lý là phương án rất khả thi, rủi ro cực thấp và mang lại hiệu quả kinh tế rõ rệt (giảm tỷ lệ cuốc rỗng, cuốc hủy). Cần sớm thiết kế UI/UX trên App tài xế và khách để thực hiện A/B testing trong nội thành.
