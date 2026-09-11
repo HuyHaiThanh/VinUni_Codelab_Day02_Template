@@ -9,11 +9,11 @@ Tài liệu này mô tả chi tiết từng phần việc cần làm trên file 
 - **Thư mục dự án:** `C:\Users\Administrator\OneDrive\Desktop\VinUni_Codelab_Day02`
 - **Branch:** `dinhtruongan` (đã checkout sẵn)
 - **Python:** 3.12.10, môi trường ảo `.venv` đã cài đặt xong
-- **API Key:** `AIzaSyDFTaqIUUOrq_kvDHhE9pe9XE8Rx8qpHwo`
+- **API Key:** `YOUR_API_KEY_HERE`
 - **Kích hoạt môi trường:**
   ```powershell
   .\.venv\Scripts\Activate.ps1
-  $env:GEMINI_API_KEY="AIzaSyDFTaqIUUOrq_kvDHhE9pe9XE8Rx8qpHwo"
+  $env:GEMINI_API_KEY="YOUR_API_KEY_HERE"
   ```
 
 ---
