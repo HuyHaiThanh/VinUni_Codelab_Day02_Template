@@ -1,6 +1,7 @@
 # 01 — Problem Scan & Quick Cards
 
 > **Học viên:** Nguyễn Hải Hiếu
+> **Mã học viên** 2A202602681
 > **Branch:** `nguyenhaihieu`
 > **Vai trò:** AI Product Engineer — Vin Smart Future (Vingroup)
 > **Nội dung:** Phase 1 (SCAN) + Phase 2 (QUICK-ASSESS) của Lab 02.
