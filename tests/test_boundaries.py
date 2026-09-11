@@ -98,6 +98,6 @@ def test_thirty_synthetic_records():
     data = json.loads((ROOT / 'data/rooms.json').read_text(encoding='utf-8'))
     assert data['synthetic'] is True
     assert len({r['id'] for r in data['rooms']}) == 30
-    result = search(data['rooms'])
+    result = search(data['rooms'], budget_vnd=12_000_000)
     assert 0 < len(result['rooms']) <= 3
-    assert all(r['known_monthly_fixed_total_vnd'] <= 4_000_000 for r in result['rooms'])
+    assert all(r['known_monthly_fixed_total_vnd'] <= 12_000_000 for r in result['rooms'])

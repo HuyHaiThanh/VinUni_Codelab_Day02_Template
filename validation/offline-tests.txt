@@ -8,4 +8,4 @@ Command: python -m pytest -q
 Exit code: 0
 
 .......................                                                  [100%]
-23 passed in 0.14s
+23 passed in 0.17s

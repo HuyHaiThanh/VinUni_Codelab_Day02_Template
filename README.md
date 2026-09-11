@@ -1,8 +1,8 @@
 # 📖 Hướng Dẫn Học Viên (Student Guide) — Lab 02: AI Product Scoping
 
-## Bài làm cá nhân hiện tại — Chatbot tìm trọ
+## Bài làm cá nhân hiện tại — Chatbot tìm chỗ ở tại Vinhomes
 
-Bài trên nhánh `huyht` gồm 4 file nộp ở thư mục gốc, bài Python Xanh SM bắt buộc theo slide và prototype tìm trọ bổ sung. Thông tin tên nhóm, họ tên, email để người nộp tự điền. Trong `04-workflow-diagram.png`, cập nhật thông tin bằng cách sửa phần header trong `tools/build_lab_assets.py` rồi chạy lại script.
+Bài trên nhánh `huyht` gồm 4 file nộp ở thư mục gốc, bài Python Xanh SM bắt buộc theo slide và prototype tìm thuê căn hộ Vinhomes bổ sung. Thông tin tên nhóm, họ tên, email để người nộp tự điền. Trong `04-workflow-diagram.png`, cập nhật thông tin bằng cách sửa phần header trong `tools/build_lab_assets.py` rồi chạy lại script.
 
 **Môi trường đã chuẩn bị:** `.venv-lab`, Python 3.13.13, phù hợp yêu cầu slide (>3.11, <3.14). Dùng lệnh dưới đây từ thư mục dự án; không cần kích hoạt venv:
 
@@ -10,7 +10,7 @@ Bài trên nhánh `huyht` gồm 4 file nộp ở thư mục gốc, bài Python X
 # Kiểm tra code cục bộ, không gọi API
 .\.venv-lab\Scripts\python.exe -m pytest -q
 
-# Demo tìm phòng từ 30 tin giả lập, không gọi LLM
+# Demo tìm căn hộ Vinhomes từ 30 tin giả lập, không gọi LLM
 .\.venv-lab\Scripts\python.exe starter-code/room_finder.py
 
 # Chỉ kiểm tra bốn file tài liệu
@@ -24,7 +24,7 @@ Bài trên nhánh `huyht` gồm 4 file nộp ở thư mục gốc, bài Python X
 ```powershell
 $env:GEMINI_API_KEY="KEY_CUA_BAN"
 .\.venv-lab\Scripts\python.exe starter-code/prompt_prototype.py
-.\.venv-lab\Scripts\python.exe starter-code/room_finder.py --query "Tìm phòng dưới 4 triệu gồm phí cố định, cách trường tối đa 3 km, vào ở 2026-10-01"
+.\.venv-lab\Scripts\python.exe starter-code/room_finder.py --query "Tìm căn hộ Vinhomes dưới 12 triệu gồm phí cố định, cách mốc tiện ích khu demo tối đa 3 km, vào ở 2026-10-01"
 .\.venv-lab\Scripts\python.exe autograder/autograder.py
 ```
 

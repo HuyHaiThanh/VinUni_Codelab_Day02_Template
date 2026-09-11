@@ -13,9 +13,11 @@ SYNTHETIC DATA / RULE DEMO — NO LLM CALL
   "rooms": [
     {
       "id": "ROOM-09",
-      "label": "Phòng giả lập 09",
-      "rent_vnd": 2750000,
-      "fixed_fees_vnd": 200000,
+      "label": "Căn hộ giả lập 09",
+      "project": "Vinhomes - khu demo",
+      "distance_reference": "Mốc tiện ích khu demo",
+      "rent_vnd": 8250000,
+      "fixed_fees_vnd": 600000,
       "distance_km": 1.0,
       "available_from": "2026-09-15",
       "updated_at": "2026-09-10",
@@ -27,13 +29,15 @@ SYNTHETIC DATA / RULE DEMO — NO LLM CALL
       ],
       "availability": "listed_available",
       "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định.",
-      "known_monthly_fixed_total_vnd": 2950000
+      "known_monthly_fixed_total_vnd": 8850000
     },
     {
       "id": "ROOM-01",
-      "label": "Phòng giả lập 01",
-      "rent_vnd": 2750000,
-      "fixed_fees_vnd": 300000,
+      "label": "Căn hộ giả lập 01",
+      "project": "Vinhomes - khu demo",
+      "distance_reference": "Mốc tiện ích khu demo",
+      "rent_vnd": 8250000,
+      "fixed_fees_vnd": 900000,
       "distance_km": 1.4,
       "available_from": "2026-09-15",
       "updated_at": "2026-09-10",
@@ -45,13 +49,15 @@ SYNTHETIC DATA / RULE DEMO — NO LLM CALL
       ],
       "availability": "listed_available",
       "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định.",
-      "known_monthly_fixed_total_vnd": 3050000
+      "known_monthly_fixed_total_vnd": 9150000
     },
     {
       "id": "ROOM-02",
-      "label": "Phòng giả lập 02",
-      "rent_vnd": 3000000,
-      "fixed_fees_vnd": 400000,
+      "label": "Căn hộ giả lập 02",
+      "project": "Vinhomes - khu demo",
+      "distance_reference": "Mốc tiện ích khu demo",
+      "rent_vnd": 9000000,
+      "fixed_fees_vnd": 1200000,
       "distance_km": 1.8,
       "available_from": "2026-09-15",
       "updated_at": "2026-09-10",
@@ -62,7 +68,7 @@ SYNTHETIC DATA / RULE DEMO — NO LLM CALL
       ],
       "availability": "listed_available",
       "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định.",
-      "known_monthly_fixed_total_vnd": 3400000
+      "known_monthly_fixed_total_vnd": 10200000
     }
   ],
   "excluded": [
@@ -159,5 +165,5 @@ SYNTHETIC DATA / RULE DEMO — NO LLM CALL
       "reason": "needs_reverification"
     }
   ],
-  "notice": "Dữ liệu giả lập. Phí điện/nước theo sử dụng chưa nằm trong tổng cố định. Cần xác minh tình trạng phòng, giá và nguồn trước khi liên hệ; không đặt cọc qua chatbot."
+  "notice": "Dữ liệu giả lập. Phí điện/nước theo sử dụng chưa nằm trong tổng cố định. Cần xác minh tình trạng căn hộ, giá và nguồn trước khi liên hệ; không đặt cọc qua chatbot."
 }

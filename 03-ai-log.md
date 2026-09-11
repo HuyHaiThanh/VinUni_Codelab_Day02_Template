@@ -27,9 +27,11 @@
 
 **Autograder có giới hạn.** Kiểm tra từ khóa “Passed” hoặc thẻ xuất hiện bất kỳ vị trí nào chưa đủ chứng minh ranh giới. Code mới kiểm tra prefix đầu chuỗi, JSON, action và human approval; không sửa đầu ra model để biến lỗi thành pass. Kiểm tra reason tự do vẫn cần con người đọc.
 
+**Sửa đối tượng mục tiêu:** AI ban đầu tự gắn bài toán với sinh viên VinUni. Người học xác nhận đối tượng đúng là người tìm chỗ ở Vinhomes. Bài hiện tại chuyển sang người tìm thuê căn hộ (cá nhân, cặp đôi, gia đình); cập nhật báo cáo, dữ liệu giả lập và sơ đồ. Đây là thay đổi phạm vi, không phải kết quả khảo sát.
+
 ## 3. Cách điều chỉnh prompt và ranh giới
 
-- Chuyển từ “gợi ý nhiều bài toán” sang 6 bài có actor và bottleneck rõ, ưu tiên tìm trọ cho sinh viên.
+- Chuyển từ “gợi ý nhiều bài toán” sang 6 bài có actor và bottleneck rõ, ưu tiên tìm chỗ ở tại Vinhomes sau khi người học sửa đối tượng mục tiêu.
 - Tách **giá thuê + phí cố định đã biết** khỏi điện/nước theo sử dụng; phí thiếu không được coi là 0.
 - LLM chỉ trích xuất nhu cầu; người dùng xác nhận, sau đó rule lọc và dựng kết quả từ danh mục có sẵn. Không để model tự bịa phòng hoặc tự thay ngân sách.
 - Bài Xanh SM theo slide vẫn có riêng system instruction và 4 tình huống tấn công; không dùng prompt tìm trọ để thay yêu cầu code bắt buộc.
@@ -39,7 +41,7 @@
 | Kiểm tra | Kết quả / Giới hạn |
 |---|---|
 | Kiểm thử cục bộ | 23 test rule/validator đạt. Đây là test code, không phải 23 lần gọi Gemini. |
-| Demo tìm trọ | Với dữ liệu giả lập ngày 2026-09-11, ngân sách 4 triệu, khoảng cách 3 km, vào ở 2026-10-01: trả ROOM-09, ROOM-01, ROOM-02. Tổng cố định tương ứng 2.950.000; 3.050.000; 3.400.000 VND/tháng. |
+| Demo tìm thuê căn hộ Vinhomes (sau điều chỉnh đối tượng) | Với dữ liệu giả lập ngày 2026-09-11, ngân sách 12 triệu, khoảng cách 3 km, vào ở 2026-10-01: trả ROOM-09, ROOM-01, ROOM-02. Tổng cố định tương ứng 8.850.000; 9.150.000; 10.200.000 VND/tháng. |
 | Sơ đồ PNG | Đã xuất và xem ảnh: đủ 5 bước, handoff, bottleneck, thời gian và ghi chú giả định. |
 | Autograder | **8/10 kiểm tra tự động:** đủ 4 file và đạt 3 kiểm tra cấu trúc code. Hai tiêu chí chạy API/đầu ra live chưa đạt do thiếu key. Đây không phải điểm giảng viên chấm nội dung. |
 | Gemini trực tiếp | **Chưa chạy được:** môi trường chưa có GEMINI_API_KEY/GOOGLE_API_KEY. Script báo chưa chạy và trả exit code 2; không thay bằng mock hoặc tự ghi Passed. |

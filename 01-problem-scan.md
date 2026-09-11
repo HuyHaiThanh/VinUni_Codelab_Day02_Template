@@ -8,13 +8,13 @@
 
 **Phạm vi:** Bài làm cá nhân — Phase 1 và Phase 2 theo README.
 
-> Các quy trình và thời gian dưới đây là giả định cần khảo sát; các metric là mục tiêu thử nghiệm, chưa phải kết quả đạt được. Đề tài tìm trọ được đặt trong bối cảnh đề xuất hỗ trợ sinh viên VinUni, không khẳng định trường đang cung cấp dịch vụ này.
+> Các quy trình và thời gian dưới đây là giả định cần khảo sát; các metric là mục tiêu thử nghiệm, chưa phải kết quả đạt được. Đề tài ưu tiên là hỗ trợ người tìm thuê chỗ ở tại Vinhomes. Đây là đề xuất học tập, không khẳng định Vinhomes đang cung cấp chatbot này; chưa bao gồm mua bán bất động sản.
 
 ## Phase 1 — SCAN: 6 bài toán chọn lọc
 
 | # | Subsidiary / Bối cảnh | Lens | Mô tả ngắn bài toán |
 |---|---|---|---|
-| 1 | **VinUni — hỗ trợ sinh viên tìm chỗ ở** | **Tốn thời gian** | Sinh viên tìm phòng trọ phải đọc nhiều tin rời rạc, hỏi lại giá và phí, rồi tự so sánh ngân sách, vị trí và ngày chuyển vào; khó lập danh sách phòng thực sự phù hợp. |
+| 1 | **Vinhomes — hỗ trợ người tìm thuê chỗ ở** | **Tốn thời gian** | Cá nhân, cặp đôi hoặc gia đình muốn thuê căn hộ phải đọc nhiều tin rời rạc, hỏi lại giá, phí quản lý, nội thất và tình trạng bàn giao; khó so sánh các căn đáp ứng ngân sách và ngày chuyển vào. |
 | 2 | Xanh SM | Pain từ người khác | Khách và tài xế mô tả đồ thất lạc khác nhau, khiến nhân viên hỗ trợ mất thời gian đối chiếu báo cáo để tìm đồ và xác minh. |
 | 3 | VinUni — phòng đào tạo | Lặp lại | Nhân viên đọc email sinh viên, phân loại yêu cầu và hỏi bổ sung thông tin còn thiếu trước khi chuyển người xử lý. |
 | 4 | VinFast — mua hàng | Tốn thời gian | Nhân viên phải đọc chuỗi email nhà cung cấp để phát hiện thay đổi lịch giao linh kiện, dễ bỏ sót cập nhật hoặc nhầm lịch đề xuất với lịch đã xác nhận. |
@@ -23,32 +23,32 @@
 
 ## Phase 2 — 3 Quick Problem Cards
 
-### Card #1 — Chatbot tìm phòng trọ phù hợp cho sinh viên (ưu tiên)
+### Card #1 — Chatbot tìm thuê căn hộ Vinhomes (ưu tiên)
 
 | Trường | Nội dung |
 |---|---|
-| **Bài toán** | Giúp sinh viên lập danh sách phòng trọ đáp ứng nhu cầu và nhận biết thông tin cần xác minh trước khi liên hệ xem phòng. |
-| **Đơn vị / Actor** | Bối cảnh đề xuất tại VinUni; người dùng chính là sinh viên cần thuê phòng, đặc biệt người mới đến khu vực trường. |
-| **Workflow hiện tại — giả định** | 1. Xác định ngân sách và nhu cầu → 2. Tìm tin trên nhiều nguồn → 3. Hỏi giá, phí, vị trí và tình trạng phòng → 4. So sánh, chọn danh sách ngắn → 5. Liên hệ xác minh và hẹn xem. |
-| **Bottleneck — giả định** | Bước 2–4: khoảng **45 phút/phiên tìm kiếm** để đọc tin và so sánh; chưa tính thời gian chờ chủ trọ phản hồi hoặc đi xem phòng. |
-| **AI hỗ trợ** | Hỏi rõ nhu cầu bằng hội thoại; chuyển thành tiêu chí tìm kiếm; giải thích tối đa 3 phòng phù hợp từ dữ liệu có sẵn, kèm giá/phí, nguồn tin và thông tin còn thiếu. |
-| **Metric mục tiêu** | Giảm thời gian lập danh sách ngắn từ **45 xuống ≤15 phút/phiên**; **≥90% tình huống có phòng phù hợp** trả về ít nhất một phòng đúng trong top 3; **100% phòng được gắn nhãn “đáp ứng”** phải thỏa các điều kiện bắt buộc trên bộ thử. |
+| **Bài toán** | Giúp người tìm thuê lập danh sách căn hộ đáp ứng nhu cầu và nhận biết thông tin cần xác minh trước khi liên hệ xem căn hộ. |
+| **Đơn vị / Actor** | Vinhomes; người dùng chính là cá nhân, cặp đôi hoặc gia đình tìm thuê căn hộ để ở. |
+| **Workflow hiện tại — giả định** | 1. Xác định ngân sách và nhu cầu → 2. Tìm tin trên nhiều nguồn → 3. Hỏi giá, phí, vị trí và tình trạng căn hộ → 4. So sánh, chọn danh sách ngắn → 5. Liên hệ xác minh và hẹn xem. |
+| **Bottleneck — giả định** | Bước 2–4: khoảng **45 phút/phiên tìm kiếm** để đọc tin và so sánh; chưa tính thời gian chờ chủ nhà/môi giới phản hồi hoặc đi xem căn hộ. |
+| **AI hỗ trợ** | Hỏi rõ nhu cầu bằng hội thoại; chuyển thành tiêu chí tìm kiếm; giải thích tối đa 3 căn hộ phù hợp từ dữ liệu có sẵn, kèm giá/phí, nguồn tin và thông tin còn thiếu. |
+| **Metric mục tiêu** | Giảm thời gian lập danh sách ngắn từ **45 xuống ≤15 phút/phiên**; **≥90% tình huống có căn hộ phù hợp** trả về ít nhất một căn hộ đúng trong top 3; **100% căn hộ được gắn nhãn “đáp ứng”** phải thỏa các điều kiện bắt buộc trên bộ thử. |
 | **Quick Architecture** | **LLM Feature + bộ lọc theo quy tắc**. LLM hiểu nhu cầu và giải thích; code lọc ngân sách, vị trí, ngày vào ở và các điều kiện bắt buộc. |
 
-**Phạm vi prototype:** Một khu vực quanh trường, khoảng 30 tin phòng giả lập hoặc được phép sử dụng. Mỗi tin có mã phòng, giá thuê, phí bắt buộc đã biết, khu vực, khoảng cách nếu có nguồn, tiện ích, ngày có thể vào ở, nguồn và ngày cập nhật. Chatbot chỉ hỗ trợ chọn phòng để người dùng kiểm tra tiếp.
+**Phạm vi prototype:** Một khu đô thị Vinhomes được chọn, khoảng 30 tin căn hộ giả lập hoặc được phép sử dụng. Mỗi tin có mã căn hộ, giá thuê, phí bắt buộc đã biết, khu vực, khoảng cách nếu có nguồn, tiện ích, ngày có thể vào ở, nguồn và ngày cập nhật. Chatbot chỉ hỗ trợ chọn căn hộ để người dùng kiểm tra tiếp.
 
-**Ví dụ nhu cầu:** “Mình cần phòng dưới 4 triệu/tháng tính cả phí cố định, ở một mình, trong phạm vi 3 km từ trường, vào ở đầu tháng sau; ưu tiên có cửa sổ.” Chatbot cần xác nhận ngày chuyển vào cụ thể và phân biệt điều kiện bắt buộc với ưu tiên có thể linh hoạt.
+**Ví dụ nhu cầu:** “Mình cần căn hộ dưới 12 triệu/tháng tính cả phí cố định, ở một mình, trong phạm vi 3 km từ mốc tiện ích tham chiếu của khu đô thị, vào ở đầu tháng sau; ưu tiên có cửa sổ.” Chatbot cần xác nhận ngày chuyển vào cụ thể và phân biệt điều kiện bắt buộc với ưu tiên có thể linh hoạt.
 
 **Ranh giới và fallback:**
 
-- Chỉ đề xuất phòng có mã và nguồn trong dữ liệu. Không bịa phòng, giá, khoảng cách, tiện ích hoặc khẳng định tin còn hiệu lực khi chưa xác minh.
+- Chỉ đề xuất căn hộ có mã và nguồn trong dữ liệu. Không bịa căn hộ, giá, khoảng cách, tiện ích hoặc khẳng định tin còn hiệu lực khi chưa xác minh.
 - Thiếu phí thì ghi “chưa đủ dữ liệu xác nhận ngân sách”; chi phí điện/nước theo sử dụng phải tách khỏi tổng phí cố định. Không gọi một mức giá chưa đầy đủ là “trọn gói”.
 - Không tự nới ngân sách hoặc điều kiện bắt buộc. Nếu không có kết quả, thông báo rõ và hỏi người dùng muốn điều chỉnh tiêu chí nào.
-- Không khẳng định phòng an toàn hoặc chủ trọ uy tín chỉ từ nội dung tin; không tự đặt cọc, đặt phòng hoặc liên hệ chủ trọ. Người dùng xác minh và quyết định.
+- Không khẳng định căn hộ an toàn hoặc chủ nhà/môi giới uy tín chỉ từ nội dung tin; không tự đặt cọc, đặt căn hộ hoặc liên hệ chủ nhà/môi giới. Người dùng xác minh và quyết định.
 
-**Kiểm chứng dự kiến:** 20 tình huống có đáp án chuẩn: 12 có phòng đáp ứng, 4 không có kết quả, 4 thiếu/mâu thuẫn thông tin. Kiểm tra riêng việc hỏi lại, xử lý tin cũ, phí thiếu và yêu cầu vượt ngân sách. So sánh thời gian với bộ lọc thông thường trên cùng dữ liệu; không tính thời gian thu thập tin vào riêng một phương án.
+**Kiểm chứng dự kiến:** 20 tình huống có đáp án chuẩn: 12 có căn hộ đáp ứng, 4 không có kết quả, 4 thiếu/mâu thuẫn thông tin. Kiểm tra riêng việc hỏi lại, xử lý tin cũ, phí thiếu và yêu cầu vượt ngân sách. So sánh thời gian với bộ lọc thông thường trên cùng dữ liệu; không tính thời gian thu thập tin vào riêng một phương án.
 
-**AI Fit cần chứng minh:** Nếu người dùng chỉ lọc giá và vị trí, bộ lọc thông thường có thể đủ. Lợi ích cần thử của chatbot là hiểu yêu cầu diễn đạt tự nhiên, hỏi đúng thông tin thiếu và giải thích sự phù hợp. Dữ liệu phòng đáng tin và được cập nhật là phụ thuộc chính.
+**AI Fit cần chứng minh:** Nếu người dùng chỉ lọc giá và vị trí, bộ lọc thông thường có thể đủ. Lợi ích cần thử của chatbot là hiểu yêu cầu diễn đạt tự nhiên, hỏi đúng thông tin thiếu và giải thích sự phù hợp. Dữ liệu căn hộ đáng tin và được cập nhật là phụ thuộc chính.
 
 ### Card #2 — Đối chiếu đồ thất lạc Xanh SM
 
@@ -82,6 +82,6 @@
 
 ## Hướng ưu tiên cho Phase 3
 
-**Chọn hướng chatbot tìm trọ cho sinh viên để phân tích sâu**, theo ưu tiên cá nhân hiện tại. Đề tài tập trung vào chọn phòng theo nhu cầu và minh bạch thông tin còn thiếu, khác các đề tài mẫu về thủ tục cư dân và đặt phòng khách sạn.
+**Chọn hướng chatbot tìm chỗ ở tại Vinhomes để phân tích sâu**, theo ưu tiên cá nhân hiện tại. Đề tài tập trung vào chọn phòng theo nhu cầu và minh bạch thông tin còn thiếu, khác các đề tài mẫu về thủ tục cư dân và đặt phòng khách sạn.
 
-Trước khi kết luận GO, cần phỏng vấn một nhóm sinh viên về cách tìm phòng, xác minh nguồn dữ liệu có thể dùng và đo baseline. Prototype ban đầu dùng dữ liệu giới hạn, kiểm tra chất lượng gợi ý trước khi mở rộng nguồn tin.
+Trước khi kết luận GO, cần phỏng vấn người đang tìm thuê căn hộ tại Vinhomes về cách tìm và so sánh tin, xác minh nguồn dữ liệu có thể dùng và đo baseline. Prototype ban đầu dùng dữ liệu giới hạn, kiểm tra chất lượng gợi ý trước khi mở rộng nguồn tin.
