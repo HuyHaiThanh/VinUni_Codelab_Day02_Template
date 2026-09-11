@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title description">
+  <title id="title">Xanh SM - Current-State Workflow: điểm đón trong ngõ sâu</title>
+  <desc id="description">Sơ đồ quy trình hiện tại khi khách ghim điểm đón trong ngõ sâu hoặc nơi ô tô khó tiếp cận.</desc>
+  <defs>
+    <style>
+      text { font-family: Arial, sans-serif; fill: #172033; }
+      .title { font-size: 34px; font-weight: 700; }
+      .subtitle { font-size: 18px; fill: #526072; }
+      .stepTitle { font-size: 20px; font-weight: 700; }
+      .body { font-size: 16px; }
+      .meta { font-size: 14px; fill: #526072; }
+      .small { font-size: 14px; }
+      .label { font-size: 14px; font-weight: 700; fill: #ffffff; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#526072"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#f7f9fc"/>
+  <rect x="64" y="46" width="1472" height="104" rx="12" fill="#ffffff" stroke="#d9e1ec"/>
+  <text x="104" y="91" class="title">Xanh SM - Current-State Workflow</text>
+  <text x="104" y="123" class="subtitle">Khách ghim điểm đón trong ngõ sâu hoặc khu vực ô tô khó tiếp cận</text>
+
+  <rect x="64" y="187" width="1472" height="78" rx="10" fill="#fff3e8" stroke="#f4b77d"/>
+  <text x="94" y="220" class="stepTitle" fill="#923c00">Pain point của khách hàng</text>
+  <text x="94" y="248" class="body">Bản đồ vẫn có thể route vào ngõ, nhưng không phản ánh tốt độ rộng đường, chỗ quay đầu hoặc khả năng xe tiếp cận điểm ghim.</text>
+
+  <line x1="338" y1="466" x2="406" y2="466" stroke="#526072" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="692" y1="466" x2="760" y2="466" stroke="#526072" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="1046" y1="466" x2="1114" y2="466" stroke="#526072" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="64" y="340" width="274" height="300" rx="10" fill="#ffffff" stroke="#9ab6d8" stroke-width="2"/>
+    <rect x="64" y="340" width="274" height="42" rx="10" fill="#1769aa"/>
+    <text x="88" y="368" class="label">BƯỚC 1 - KHÁCH ĐẶT XE</text>
+    <text x="88" y="420" class="stepTitle">Ghim điểm đón</text>
+    <text x="88" y="452" class="body">Khách chọn GPS hoặc ghim</text>
+    <text x="88" y="476" class="body">địa chỉ ở sâu trong ngõ.</text>
+    <line x1="88" y1="512" x2="314" y2="512" stroke="#d9e1ec"/>
+    <text x="88" y="548" class="meta">Actor: Khách hàng</text>
+    <text x="88" y="576" class="meta">Thời gian: ~1 phút</text>
+    <text x="88" y="606" class="meta">Output: pin GPS / địa chỉ</text>
+  </g>
+
+  <g>
+    <rect x="418" y="340" width="274" height="300" rx="10" fill="#fff7f7" stroke="#e45050" stroke-width="3"/>
+    <rect x="418" y="340" width="274" height="42" rx="10" fill="#c52f2f"/>
+    <text x="442" y="368" class="label">BƯỚC 2 - BẢN ĐỒ ROUTE</text>
+    <text x="442" y="420" class="stepTitle">Đưa xe vào ngõ</text>
+    <text x="442" y="452" class="body">Map dẫn tài xế đến pin,</text>
+    <text x="442" y="476" class="body">nhưng thiếu thông tin về</text>
+    <text x="442" y="500" class="body">độ rộng/chỗ quay đầu.</text>
+    <line x1="442" y1="524" x2="668" y2="524" stroke="#f0caca"/>
+    <text x="442" y="558" class="small" fill="#b42318">BOTTLENECK: route hợp lệ</text>
+    <text x="442" y="580" class="small" fill="#b42318">nhưng ô tô khó tiếp cận</text>
+    <text x="442" y="612" class="meta">Thời gian: ~2 phút</text>
+  </g>
+
+  <g>
+    <rect x="772" y="340" width="274" height="300" rx="10" fill="#fff7f7" stroke="#e45050" stroke-width="3"/>
+    <rect x="772" y="340" width="274" height="42" rx="10" fill="#c52f2f"/>
+    <text x="796" y="368" class="label">BƯỚC 3 - XÁC MINH THỦ CÔNG</text>
+    <text x="796" y="420" class="stepTitle">Gọi / chat qua lại</text>
+    <text x="796" y="452" class="body">Tài xế không vào được hoặc</text>
+    <text x="796" y="476" class="body">không tìm thấy cổng; khách</text>
+    <text x="796" y="500" class="body">mô tả mốc địa điểm.</text>
+    <line x1="796" y1="524" x2="1022" y2="524" stroke="#f0caca"/>
+    <text x="796" y="558" class="small" fill="#b42318">BOTTLENECK: dễ hiểu nhầm</text>
+    <text x="796" y="580" class="small" fill="#b42318">và phát sinh chờ đợi</text>
+    <text x="796" y="612" class="meta">Thời gian: 5-10 phút</text>
+  </g>
+
+  <g>
+    <rect x="1126" y="340" width="410" height="300" rx="10" fill="#ffffff" stroke="#9ab6d8" stroke-width="2"/>
+    <rect x="1126" y="340" width="410" height="42" rx="10" fill="#1769aa"/>
+    <text x="1150" y="368" class="label">BƯỚC 4 - KẾT QUẢ</text>
+    <text x="1150" y="420" class="stepTitle">Đổi điểm đón hoặc hủy chuyến</text>
+    <text x="1150" y="452" class="body">Khách đi bộ ra đầu ngõ / tài xế quay lại;</text>
+    <text x="1150" y="476" class="body">nếu không thống nhất được, một bên hủy cuốc.</text>
+    <line x1="1150" y1="512" x2="1512" y2="512" stroke="#d9e1ec"/>
+    <text x="1150" y="548" class="meta">Handoff: Khách ↔ Tài xế ↔ CSKH (nếu cần)</text>
+    <text x="1150" y="576" class="meta">Tổng thời gian: 8-13 phút / lượt</text>
+    <text x="1150" y="606" class="meta">Rủi ro: chờ lâu, hủy chuyến, trải nghiệm xấu</text>
+  </g>
+
+  <rect x="64" y="704" width="1472" height="224" rx="12" fill="#edf8f5" stroke="#6ab39a" stroke-width="2"/>
+  <text x="94" y="748" class="stepTitle">Cơ hội cho Future-State (để dùng ở Deep Dive)</text>
+  <text x="94" y="786" class="body">1. Rule-based map layer đánh giá độ tiếp cận ô tô: độ rộng đường, hướng cấm, chỗ quay đầu và lịch sử xe từng đến.</text>
+  <text x="94" y="818" class="body">2. LLM hiểu chat/ghi âm ngắn để xác định mốc địa điểm và soạn nháp gợi ý “điểm đón an toàn” ở đầu ngõ/cổng gần nhất.</text>
+  <text x="94" y="850" class="body">3. Human-in-the-loop: khách và tài xế cùng xác nhận; nếu thiếu dữ liệu, giữ pin cũ và chuyển về liên lạc/điều phối hiện tại.</text>
+  <text x="94" y="894" class="meta">Ký hiệu: Viền đỏ = bottleneck | Mũi tên = luồng xử lý | Handoff = điểm chuyển giao giữa các bên</text>
+</svg>

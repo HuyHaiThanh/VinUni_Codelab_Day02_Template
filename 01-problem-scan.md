@@ -2,7 +2,7 @@
 
 **Tên Nhóm:** Group 1
 **Họ tên thành viên:** Đinh Trường An
-**Email:** dinhtruongan@example.com
+**Email:** truongan1203.hp@gmail.com
 
 ---
 
@@ -12,7 +12,7 @@ Danh sách ưu tiên các pain point người dùng có thể gặp trực tiế
 
 | # | Subsidiary | Lens | Mô tả ngắn bài toán |
 |---|---|---|---|
-| 1 | **Xanh SM** | Pain từ người khác | Khách và tài xế không tìm thấy nhau tại bệnh viện, chung cư, sân bay có nhiều cổng; phải gọi qua lại và dễ hủy chuyến. |
+| 1 | **Xanh SM** | Pain từ người khác | Khách ghim điểm đón trong ngõ sâu hoặc địa điểm có nhiều cổng; bản đồ vẫn route được nhưng ô tô khó đi vào/quay đầu, khiến hai bên gọi qua lại và dễ hủy chuyến. |
 | 2 | **Xanh SM** | Pain từ người khác | Khách lo ngại một số tài xế chạy quá tốc độ, phanh gấp hoặc ôm cua gấp; hệ thống hiện chưa phát hiện và can thiệp nhất quán các chuyến có rủi ro. |
 | 3 | **Vinhomes** | AI-upgrade | Cư dân báo rò nước, hỏng đèn, thang máy lỗi hoặc tiếng ồn nhưng không biết yêu cầu đã được chuyển cho ai và khi nào được xử lý. |
 | 4 | **Vinpearl / VinWonders** | Time-consuming | Kế hoạch vui chơi của gia đình bị đảo lộn khi mưa, khu vui chơi đóng, hoặc sự kiện thay đổi; khách mất thời gian tìm phương án thay thế. |
@@ -27,24 +27,24 @@ Danh sách ưu tiên các pain point người dùng có thể gặp trực tiế
 ```text
 QUICK PROBLEM CARD #1
 
-Bài toán: Khách và tài xế Xanh SM không tìm thấy nhau tại bệnh viện, chung cư, sân bay có nhiều cổng đón.
+Bài toán: Khách ghim điểm đón trong ngõ sâu hoặc địa điểm có nhiều cổng, trong khi ô tô khó tiếp cận hoặc quay đầu dù bản đồ vẫn cho phép route.
 Công ty thành viên: [x] Xanh SM
 
 Ai đang đau? Khách hàng (chờ đợi, lỡ chuyến), tài xế (mất thời gian, mất cuốc), điều phối/CSKH (nhận cuộc gọi hỗ trợ).
 
 Workflow thủ công hiện tại:
-1. Khách đặt xe theo vị trí GPS chung chung
-2. Tài xế đến khu vực nhưng không xác định được cổng đón
-3. Khách và tài xế gọi/chat qua lại để mô tả mốc địa điểm
-4. Nếu vẫn không gặp nhau, khách hủy chuyến hoặc tài xế hủy cuốc
+1. Khách đặt xe theo vị trí GPS hoặc ghim điểm sâu trong ngõ
+2. Hệ thống bản đồ route xe vào ngõ nhưng không đánh giá tốt độ rộng đường, chỗ quay đầu hoặc khả năng đón xe
+3. Tài xế đến gần nơi đón, không thể vào/ngang qua, rồi gọi/chat với khách để mô tả mốc địa điểm
+4. Khách đi bộ tìm xe hoặc đổi điểm đón thủ công; nếu vẫn không gặp nhau, khách hoặc tài xế hủy chuyến
 
-Bước tốn thời gian/lỗi nhất: Bước 3 (trung bình 5-10 phút, dễ hiểu nhầm cổng/sảnh).
-AI hỗ trợ: Đọc chat hoặc ghi âm ngắn, nhận diện mốc địa điểm và tạo tin nhắn nháp xác nhận điểm đón cho cả hai bên.
+Bước tốn thời gian/lỗi nhất: Bước 2-3 (trung bình 5-10 phút, bản đồ không phản ánh đầy đủ khả năng tiếp cận bằng ô tô và hai bên dễ hiểu nhầm mốc/sảnh).
+AI hỗ trợ: Kết hợp rule-based map layer (độ rộng đường, hướng cấm, chỗ quay đầu, lịch sử xe từng tiếp cận) với LLM đọc chat/ghi âm ngắn. Hệ thống gợi ý một "điểm đón an toàn" như đầu ngõ, cổng gần nhất hoặc điểm quay đầu phù hợp, rồi tạo tin nhắn nháp để khách và tài xế xác nhận.
 
-Metric: Giảm tỷ lệ hủy chuyến do không tìm thấy điểm đón 20%; giảm thời gian xác nhận điểm đón từ 7 phút xuống dưới 2 phút.
+Metric: Giảm 20% tỷ lệ hủy chuyến do không tìm thấy điểm đón/không tiếp cận được điểm ghim; giảm thời gian xác nhận điểm đón từ 7 phút xuống dưới 2 phút; tỷ lệ điểm đón gợi ý được cả hai bên xác nhận đạt trên 85%.
 
-Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent
-Boundary: AI chỉ tạo bản nháp gợi ý; không tự đổi điểm đón, không tự gửi tin nhắn khi chưa có phê duyệt của tài xế/khách.
+Quick Architecture: [ ] No AI  [x] Rule  [x] LLM  [ ] Agent
+Boundary: AI chỉ tạo bản nháp gợi ý; không tự đổi điểm đón hoặc tự gửi tin nhắn khi chưa có xác nhận của khách và tài xế. Khi map data không đủ tin cậy, hệ thống phải hiển thị vị trí ghim ban đầu và chuyển sang liên lạc/điều phối theo quy trình hiện có.
 ```
 
 ### Card #2: Xanh SM - Phát hiện hành vi lái xe rủi ro
