@@ -1,0 +1,11 @@
+Tên nhóm: [Tự điền]
+
+Họ và tên: [Tự điền]
+
+Email đăng ký: [Tự điền]
+
+Command: python -m pytest -q
+Exit code: 0
+
+.......................                                                  [100%]
+23 passed in 0.14s

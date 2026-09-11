@@ -1,5 +1,39 @@
 # 📖 Hướng Dẫn Học Viên (Student Guide) — Lab 02: AI Product Scoping
 
+## Bài làm cá nhân hiện tại — Chatbot tìm trọ
+
+Bài trên nhánh `huyht` gồm 4 file nộp ở thư mục gốc, bài Python Xanh SM bắt buộc theo slide và prototype tìm trọ bổ sung. Thông tin tên nhóm, họ tên, email để người nộp tự điền. Trong `04-workflow-diagram.png`, cập nhật thông tin bằng cách sửa phần header trong `tools/build_lab_assets.py` rồi chạy lại script.
+
+**Môi trường đã chuẩn bị:** `.venv-lab`, Python 3.13.13, phù hợp yêu cầu slide (>3.11, <3.14). Dùng lệnh dưới đây từ thư mục dự án; không cần kích hoạt venv:
+
+```powershell
+# Kiểm tra code cục bộ, không gọi API
+.\.venv-lab\Scripts\python.exe -m pytest -q
+
+# Demo tìm phòng từ 30 tin giả lập, không gọi LLM
+.\.venv-lab\Scripts\python.exe starter-code/room_finder.py
+
+# Chỉ kiểm tra bốn file tài liệu
+.\.venv-lab\Scripts\python.exe autograder/autograder.py --section-a
+```
+
+Để cài lại trên máy khác, tạo venv bằng Python 3.12 hoặc 3.13 rồi chạy `pip install -r requirements.txt`. Không commit thư mục môi trường.
+
+**Chạy Gemini thật:** nhập API key trong terminal cá nhân, không ghi key vào file bài nộp hoặc gửi trong chat. Hiện chưa có key trong môi trường nên kết quả live chưa được xác nhận.
+
+```powershell
+$env:GEMINI_API_KEY="KEY_CUA_BAN"
+.\.venv-lab\Scripts\python.exe starter-code/prompt_prototype.py
+.\.venv-lab\Scripts\python.exe starter-code/room_finder.py --query "Tìm phòng dưới 4 triệu gồm phí cố định, cách trường tối đa 3 km, vào ở 2026-10-01"
+.\.venv-lab\Scripts\python.exe autograder/autograder.py
+```
+
+Ngày dữ liệu demo cố định là 2026-09-11 để tái lập kết quả; đây không phải danh sách phòng thật. Gemini intake là một lượt trích xuất có xác nhận người dùng, chưa phải chatbot hội thoại nhiều lượt hoàn chỉnh. Ghi output thật và lỗi vào AI log trước khi nộp. Full autograder có giới hạn 30 giây cho script; nếu gặp timeout, kiểm tra output khi chạy trực tiếp, không thay kết quả bằng mock.
+
+Đọc `02-deep-dive-report.md` để xem quyết định NOT YET cho dữ liệu thật. Khi sẵn sàng, push nhánh cá nhân; theo quy định chi tiết bên dưới, không merge code Python vào main.
+
+---
+
 Tài liệu này hướng dẫn chi tiết cách thiết lập môi trường lập trình Python, cấu hình API Key, quy trình phân nhánh Git làm việc nhóm và chuẩn bị sản phẩm nộp bài cho **Lab 02: AI Product Scoping (Vin Smart Future)**.
 
 ---

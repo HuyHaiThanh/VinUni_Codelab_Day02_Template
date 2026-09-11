@@ -1,0 +1,505 @@
+{
+  "team": "[Tự điền]",
+  "name": "[Tự điền]",
+  "email": "[Tự điền]",
+  "synthetic": true,
+  "as_of": "2026-09-11",
+  "notice": "Không phải tin cho thuê thật; khoảng cách và giá hoàn toàn giả lập.",
+  "rooms": [
+    {
+      "id": "ROOM-01",
+      "label": "Phòng giả lập 01",
+      "rent_vnd": 2750000,
+      "fixed_fees_vnd": 300000,
+      "distance_km": 1.4,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-01",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-02",
+      "label": "Phòng giả lập 02",
+      "rent_vnd": 3000000,
+      "fixed_fees_vnd": 400000,
+      "distance_km": 1.8,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-02",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-03",
+      "label": "Phòng giả lập 03",
+      "rent_vnd": 3250000,
+      "fixed_fees_vnd": 200000,
+      "distance_km": 2.2,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-03",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-04",
+      "label": "Phòng giả lập 04",
+      "rent_vnd": 3500000,
+      "fixed_fees_vnd": 300000,
+      "distance_km": 2.6,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-04",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-05",
+      "label": "Phòng giả lập 05",
+      "rent_vnd": 3750000,
+      "fixed_fees_vnd": 400000,
+      "distance_km": 3.0,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-08-20",
+      "source": "synthetic://ROOM-05",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-06",
+      "label": "Phòng giả lập 06",
+      "rent_vnd": 4000000,
+      "fixed_fees_vnd": 200000,
+      "distance_km": 3.4,
+      "available_from": "2026-11-01",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-06",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-07",
+      "label": "Phòng giả lập 07",
+      "rent_vnd": 4250000,
+      "fixed_fees_vnd": null,
+      "distance_km": 3.8,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-07",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-08",
+      "label": "Phòng giả lập 08",
+      "rent_vnd": 2500000,
+      "fixed_fees_vnd": 400000,
+      "distance_km": 4.2,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-08",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-09",
+      "label": "Phòng giả lập 09",
+      "rent_vnd": 2750000,
+      "fixed_fees_vnd": 200000,
+      "distance_km": 1.0,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-09",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-10",
+      "label": "Phòng giả lập 10",
+      "rent_vnd": 3000000,
+      "fixed_fees_vnd": 300000,
+      "distance_km": 1.4,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-08-20",
+      "source": "synthetic://ROOM-10",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-11",
+      "label": "Phòng giả lập 11",
+      "rent_vnd": 3250000,
+      "fixed_fees_vnd": 400000,
+      "distance_km": 1.8,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-11",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "unknown",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-12",
+      "label": "Phòng giả lập 12",
+      "rent_vnd": 3500000,
+      "fixed_fees_vnd": 200000,
+      "distance_km": 2.2,
+      "available_from": "2026-11-01",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-12",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-13",
+      "label": "Phòng giả lập 13",
+      "rent_vnd": 3750000,
+      "fixed_fees_vnd": 300000,
+      "distance_km": 2.6,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-13",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-14",
+      "label": "Phòng giả lập 14",
+      "rent_vnd": 4000000,
+      "fixed_fees_vnd": null,
+      "distance_km": 3.0,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-14",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-15",
+      "label": "Phòng giả lập 15",
+      "rent_vnd": 4250000,
+      "fixed_fees_vnd": 200000,
+      "distance_km": 3.4,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-08-20",
+      "source": "synthetic://ROOM-15",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-16",
+      "label": "Phòng giả lập 16",
+      "rent_vnd": 2500000,
+      "fixed_fees_vnd": 300000,
+      "distance_km": 3.8,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-16",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-17",
+      "label": "Phòng giả lập 17",
+      "rent_vnd": 2750000,
+      "fixed_fees_vnd": 400000,
+      "distance_km": 4.2,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-17",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-18",
+      "label": "Phòng giả lập 18",
+      "rent_vnd": 3000000,
+      "fixed_fees_vnd": 200000,
+      "distance_km": 1.0,
+      "available_from": "2026-11-01",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-18",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-19",
+      "label": "Phòng giả lập 19",
+      "rent_vnd": 3250000,
+      "fixed_fees_vnd": 300000,
+      "distance_km": 1.4,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-19",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-20",
+      "label": "Phòng giả lập 20",
+      "rent_vnd": 3500000,
+      "fixed_fees_vnd": 400000,
+      "distance_km": 1.8,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-08-20",
+      "source": "synthetic://ROOM-20",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-21",
+      "label": "Phòng giả lập 21",
+      "rent_vnd": 3750000,
+      "fixed_fees_vnd": null,
+      "distance_km": 2.2,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-21",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-22",
+      "label": "Phòng giả lập 22",
+      "rent_vnd": 4000000,
+      "fixed_fees_vnd": 300000,
+      "distance_km": 2.6,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-22",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "unknown",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-23",
+      "label": "Phòng giả lập 23",
+      "rent_vnd": 4250000,
+      "fixed_fees_vnd": 400000,
+      "distance_km": 3.0,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-23",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-24",
+      "label": "Phòng giả lập 24",
+      "rent_vnd": 2500000,
+      "fixed_fees_vnd": 200000,
+      "distance_km": 3.4,
+      "available_from": "2026-11-01",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-24",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-25",
+      "label": "Phòng giả lập 25",
+      "rent_vnd": 2750000,
+      "fixed_fees_vnd": 300000,
+      "distance_km": 3.8,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-08-20",
+      "source": "synthetic://ROOM-25",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-26",
+      "label": "Phòng giả lập 26",
+      "rent_vnd": 3000000,
+      "fixed_fees_vnd": 400000,
+      "distance_km": 4.2,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-26",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-27",
+      "label": "Phòng giả lập 27",
+      "rent_vnd": 3250000,
+      "fixed_fees_vnd": 200000,
+      "distance_km": 1.0,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-27",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-28",
+      "label": "Phòng giả lập 28",
+      "rent_vnd": 3500000,
+      "fixed_fees_vnd": null,
+      "distance_km": 1.4,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-28",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-29",
+      "label": "Phòng giả lập 29",
+      "rent_vnd": 3750000,
+      "fixed_fees_vnd": 400000,
+      "distance_km": 1.8,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-29",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    },
+    {
+      "id": "ROOM-30",
+      "label": "Phòng giả lập 30",
+      "rent_vnd": 4000000,
+      "fixed_fees_vnd": 200000,
+      "distance_km": 2.2,
+      "available_from": "2026-11-01",
+      "updated_at": "2026-08-20",
+      "source": "synthetic://ROOM-30",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định."
+    }
+  ]
+}

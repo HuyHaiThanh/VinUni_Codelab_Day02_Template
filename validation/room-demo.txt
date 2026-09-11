@@ -1,0 +1,163 @@
+Tên nhóm: [Tự điền]
+
+Họ và tên: [Tự điền]
+
+Email đăng ký: [Tự điền]
+
+Command: python starter-code/room_finder.py
+Exit code: 0
+
+SYNTHETIC DATA / RULE DEMO — NO LLM CALL
+{
+  "status": "matches",
+  "rooms": [
+    {
+      "id": "ROOM-09",
+      "label": "Phòng giả lập 09",
+      "rent_vnd": 2750000,
+      "fixed_fees_vnd": 200000,
+      "distance_km": 1.0,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-09",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định.",
+      "known_monthly_fixed_total_vnd": 2950000
+    },
+    {
+      "id": "ROOM-01",
+      "label": "Phòng giả lập 01",
+      "rent_vnd": 2750000,
+      "fixed_fees_vnd": 300000,
+      "distance_km": 1.4,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-01",
+      "capacity": 2,
+      "amenities": [
+        "window",
+        "private_bathroom"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định.",
+      "known_monthly_fixed_total_vnd": 3050000
+    },
+    {
+      "id": "ROOM-02",
+      "label": "Phòng giả lập 02",
+      "rent_vnd": 3000000,
+      "fixed_fees_vnd": 400000,
+      "distance_km": 1.8,
+      "available_from": "2026-09-15",
+      "updated_at": "2026-09-10",
+      "source": "synthetic://ROOM-02",
+      "capacity": 1,
+      "amenities": [
+        "parking"
+      ],
+      "availability": "listed_available",
+      "usage_fees_note": "Điện/nước theo sử dụng chưa được tính vào tổng cố định.",
+      "known_monthly_fixed_total_vnd": 3400000
+    }
+  ],
+  "excluded": [
+    {
+      "id": "ROOM-05",
+      "reason": "needs_reverification"
+    },
+    {
+      "id": "ROOM-06",
+      "reason": "over_budget"
+    },
+    {
+      "id": "ROOM-07",
+      "reason": "missing_data"
+    },
+    {
+      "id": "ROOM-08",
+      "reason": "too_far"
+    },
+    {
+      "id": "ROOM-10",
+      "reason": "needs_reverification"
+    },
+    {
+      "id": "ROOM-11",
+      "reason": "availability_unconfirmed"
+    },
+    {
+      "id": "ROOM-12",
+      "reason": "unavailable_on_date"
+    },
+    {
+      "id": "ROOM-13",
+      "reason": "over_budget"
+    },
+    {
+      "id": "ROOM-14",
+      "reason": "missing_data"
+    },
+    {
+      "id": "ROOM-15",
+      "reason": "needs_reverification"
+    },
+    {
+      "id": "ROOM-16",
+      "reason": "too_far"
+    },
+    {
+      "id": "ROOM-17",
+      "reason": "too_far"
+    },
+    {
+      "id": "ROOM-18",
+      "reason": "unavailable_on_date"
+    },
+    {
+      "id": "ROOM-20",
+      "reason": "needs_reverification"
+    },
+    {
+      "id": "ROOM-21",
+      "reason": "missing_data"
+    },
+    {
+      "id": "ROOM-22",
+      "reason": "availability_unconfirmed"
+    },
+    {
+      "id": "ROOM-23",
+      "reason": "over_budget"
+    },
+    {
+      "id": "ROOM-24",
+      "reason": "too_far"
+    },
+    {
+      "id": "ROOM-25",
+      "reason": "needs_reverification"
+    },
+    {
+      "id": "ROOM-26",
+      "reason": "too_far"
+    },
+    {
+      "id": "ROOM-28",
+      "reason": "missing_data"
+    },
+    {
+      "id": "ROOM-29",
+      "reason": "over_budget"
+    },
+    {
+      "id": "ROOM-30",
+      "reason": "needs_reverification"
+    }
+  ],
+  "notice": "Dữ liệu giả lập. Phí điện/nước theo sử dụng chưa nằm trong tổng cố định. Cần xác minh tình trạng phòng, giá và nguồn trước khi liên hệ; không đặt cọc qua chatbot."
+}
